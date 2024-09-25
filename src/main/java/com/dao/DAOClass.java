@@ -6,6 +6,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 
 import com.model.AdminLoginModel;
+import com.model.DoctorRegistrationModel;
 import com.model.PatientLoginModel;
 import com.model.PatientRegistrationModel;
 
@@ -141,6 +142,58 @@ public class DAOClass implements DAOInterface {
 		}
 
 		System.out.println("Returning login status to AdminLoginServlet: " + status);
+		return status;
+	}
+
+	public String insertDoctor(DoctorRegistrationModel dr) {
+		String status = null;
+
+		// Logging the data received from the model using getter methods
+		System.out.println("DAOClass: Received Patient data:");
+
+		String firstname = dr.getFirstname();
+		String lastname = dr.getLastname();
+		String mobilenumber = dr.getMobilenumber();
+		String email = dr.getEmail();
+		String username = dr.getUsername();
+		String password = dr.getPassword();
+
+		try {
+			// Loading the driver
+			Class.forName("com.mysql.cj.jdbc.Driver");
+
+			// Establishing connection to the database
+			Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/webprojectone", "root", "root");
+
+			// Preparing SQL statement
+			PreparedStatement ps = con.prepareStatement("insert into doctors values(?,?,?,?,?,?)");
+			ps.setString(1, firstname);
+			ps.setString(2, lastname);
+			ps.setString(3, mobilenumber);
+			ps.setString(4, email);
+			ps.setString(5, username);
+			ps.setString(6, password);
+
+			// Executing the statement
+			int n = ps.executeUpdate();
+
+			// Checking if data was inserted successfully
+			if (n > 0) {
+				System.out.println("DAOClass: Data inserted successfully.");
+				status = "success";
+			} else {
+				System.out.println("DAOClass: Data insertion failed.");
+				status = "failed";
+			}
+
+		} catch (Exception e) {
+			// Printing the exception for debugging
+			System.out.println("DAOClass: Exception occurred - " + e.getMessage());
+			e.printStackTrace();
+		}
+
+		// Returning the status of the operation
+		System.out.println("DAOClass: Returning status - " + status);
 		return status;
 	}
 }

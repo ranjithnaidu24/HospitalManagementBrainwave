@@ -54,4 +54,14 @@
     <servlet-name>AdminLogoutServlet</servlet-name>
     <url-pattern>/AdminLogoutServlet</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>RegisterDoctorThroughAdminHome</display-name>
+    <servlet-name>RegisterDoctorThroughAdminHome</servlet-name>
+    <servlet-class>com.controller.RegisterDoctorThroughAdminHome</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>RegisterDoctorThroughAdminHome</servlet-name>
+    <url-pattern>/RegisterDoctorThroughAdminHome</url-pattern>
+  </servlet-mapping>
 </web-app>

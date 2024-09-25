@@ -26,12 +26,12 @@ public class PatientLogoutServlet extends HttpServlet {
 			System.out.println("Session invalidated successfully.");
 
 			// Redirect to the login page
-			response.sendRedirect("patientlogin.html");
+			response.sendRedirect("/patientlogin.html");
 			System.out.println("Redirected to patientlogin.html.");
 		} else {
 			// Print if there was no session to invalidate
 			System.out.println("No session found. User is already logged out or session has expired.");
-			response.sendRedirect("patientlogin.html"); // Redirect to login even if there was no session
+			response.sendRedirect("/patientlogin.html"); // Redirect to login even if there was no session
 		}
 	}
 
