@@ -31,20 +31,20 @@ public class PatientRegistrationServlet extends HttpServlet {
 		System.out.println("Received parameters from front end into servlet");
 
 		// Create a new model object and set its properties
-		PatientRegistrationModel r = new PatientRegistrationModel();
-		r.setFirstname(firstname);
-		r.setLastname(lastname);
-		r.setMobilenumber(mobilenumber);
-		r.setEmail(email);
-		r.setUsername(username);
-		r.setPassword(password);
+		PatientRegistrationModel pr = new PatientRegistrationModel();
+		pr.setFirstname(firstname);
+		pr.setLastname(lastname);
+		pr.setMobilenumber(mobilenumber);
+		pr.setEmail(email);
+		pr.setUsername(username);
+		pr.setPassword(password);
 
 		// Print model object to verify if it's properly set
-		System.out.println("Model data set in servlet" + r);
+		System.out.println("Model data set in servlet" + pr);
 
 		// DAO operation to insert patient data
 		DAOInterface d = new DAOClass();
-		String status = d.insertPatient(r);
+		String status = d.insertPatient(pr);
 
 		// Check the status of insertion and decide next action
 		System.out.println("Insert operation status: " + status);

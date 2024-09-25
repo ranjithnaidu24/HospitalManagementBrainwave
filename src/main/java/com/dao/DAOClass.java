@@ -6,23 +6,24 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 
 import com.model.AdminLoginModel;
+import com.model.DoctorLoginModel;
 import com.model.DoctorRegistrationModel;
 import com.model.PatientLoginModel;
 import com.model.PatientRegistrationModel;
 
 public class DAOClass implements DAOInterface {
-	public String insertPatient(PatientRegistrationModel r) {
+	public String insertPatient(PatientRegistrationModel pr) {
 		String status = null;
 
 		// Logging the data received from the model using getter methods
 		System.out.println("DAOClass: Received Patient data:");
 
-		String firstname = r.getFirstname();
-		String lastname = r.getLastname();
-		String mobilenumber = r.getMobilenumber();
-		String email = r.getEmail();
-		String username = r.getUsername();
-		String password = r.getPassword();
+		String firstname = pr.getFirstname();
+		String lastname = pr.getLastname();
+		String mobilenumber = pr.getMobilenumber();
+		String email = pr.getEmail();
+		String username = pr.getUsername();
+		String password = pr.getPassword();
 
 		try {
 			// Loading the driver
@@ -63,12 +64,12 @@ public class DAOClass implements DAOInterface {
 		return status;
 	}
 
-	public String loginPatient(PatientLoginModel l) {
+	public String loginPatient(PatientLoginModel pl) {
 		String status = null;
 
 		// Retrieving username and password from the login model
-		String username = l.getUsername();
-		String password = l.getPassword();
+		String username = pl.getUsername();
+		String password = pl.getPassword();
 
 		System.out.println("Attempting login for Username: " + username);
 
@@ -194,6 +195,43 @@ public class DAOClass implements DAOInterface {
 
 		// Returning the status of the operation
 		System.out.println("DAOClass: Returning status - " + status);
+		return status;
+	}
+
+	public String loginDoctor(DoctorLoginModel dl) {
+		String status = null;
+
+		String username = dl.getUsername();
+		String password = dl.getPassword();
+		System.out.println("Received login credentials - Username: " + username + ", Password: " + password);
+
+		try {
+			// loading the Driver
+			Class.forName("com.mysql.cj.jdbc.Driver");
+
+			// connection establishing
+			Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/webprojectone", "root", "root");
+
+			// statements
+			PreparedStatement ps = con.prepareStatement("select * from doctors where username=? and pass_word=?");
+			ps.setString(1, username);
+			ps.setString(2, password);
+
+			ResultSet rs = ps.executeQuery();
+
+			// Checking if a result exists
+			if (rs.next()) {
+				System.out.println("Login details found for doctor: " + username);
+				status = rs.getString(1);
+			} else {
+				System.out.println("Login detaills not found for doctor : " + username + ". Invalid credentials.");
+				status = "failed";
+			}
+		} catch (Exception e) {
+			System.out.println("An error occurred: " + e);
+		}
+
+		System.out.println("Returning login status to DoctorLoginServlet: " + status);
 		return status;
 	}
 }

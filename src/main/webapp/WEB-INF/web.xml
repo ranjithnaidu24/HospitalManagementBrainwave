@@ -64,4 +64,14 @@
     <servlet-name>RegisterDoctorThroughAdminHome</servlet-name>
     <url-pattern>/RegisterDoctorThroughAdminHome</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>DoctorLoginServlet</display-name>
+    <servlet-name>DoctorLoginServlet</servlet-name>
+    <servlet-class>com.controller.DoctorLoginServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>DoctorLoginServlet</servlet-name>
+    <url-pattern>/DoctorLoginServlet</url-pattern>
+  </servlet-mapping>
 </web-app>

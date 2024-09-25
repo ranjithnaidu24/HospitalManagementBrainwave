@@ -32,12 +32,12 @@ public class AdminLogoutServlet extends HttpServlet {
 			System.out.println("Session invalidated successfully.");
 
 			// Redirect to login page
-			response.sendRedirect("/adminlogin.html");
+			response.sendRedirect("adminlogin.html");
 			System.out.println("Redirecting to admin login page...");
 		} else {
 			// If there is no session, log that no session was found
 			System.out.println("No session found to invalidate. Redirecting to admin login page...");
-			response.sendRedirect("/adminlogin.html");
+			response.sendRedirect("adminlogin.html");
 		}
 	}
 
