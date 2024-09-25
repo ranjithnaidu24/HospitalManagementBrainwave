@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="ISO-8859-1">
+		<title>Register here</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+		
+		<script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.slim.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+		
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+		<style>
+			.formdiv{
+			border:1px solid black;
+			border-radius:20px 20px 20px 20px;
+			}
+			.fontclass{
+			font-family:Times New Roman;
+			}
+			.subbtn{
+			background-color:#0bee79;
+			}
+			.subbtn:hover{
+			transform:scale(1.1);
+			}
+		</style>
+		<script>
+			function disp(){
+				var fname=document.getElementById("firstname").value;
+				var lname=document.getElementById("lastname").value;
+				var mnum=document.getElementById("mobilenumber").value;
+				var mail=document.getElementById("email").value;
+				var uname=document.getElementById("username").value;
+				var pword=document.getElementById("password").value;
+				var cnfpwd=document.getElementById("cnfpassword").value;
+				if(fname==""||lname==""||mnum==""||mail==""||uname==""||pword==""||cnfpwd==""){
+					document.getElementById("mypara1").innerHTML="*Enter firstname";
+					document.getElementById("mypara1").style.color="red";
+					document.getElementById("mypara2").innerHTML="*Enter lastname";
+					document.getElementById("mypara2").style.color="red";
+					document.getElementById("mypara3").innerHTML="*Enter mobilenumber";
+					document.getElementById("mypara3").style.color="red";
+					document.getElementById("mypara4").innerHTML="*Enter email";
+					document.getElementById("mypara4").style.color="red";
+					document.getElementById("mypara5").innerHTML="*Enter username";
+					document.getElementById("mypara5").style.color="red";
+					document.getElementById("mypara6").innerHTML="*Enter password";
+					document.getElementById("mypara6").style.color="red";
+					document.getElementById("mypara7").innerHTML="*Confirm password";
+					document.getElementById("mypara7").style.color="red";
+					return false;
+				}
+				else{
+					return true;
+				}
+			}
+			function instruct1(){
+				document.getElementById("mypara1").innerHTML="Enter firstname";
+				document.getElementById("mypara1").style.color="blue";
+			}
+			function warn1(){
+				var fn=document.getElementById("firstname").value;
+				if(fn==""){
+					document.getElementById("mypara1").innerHTML="Enter firstname";
+					document.getElementById("mypara1").style.color="red";
+				}
+				else{
+					document.getElementById("mypara1").innerHTML="";
+				}
+			}
+
+
+			function instruct2(){
+				document.getElementById("mypara2").innerHTML="Enter lastname";
+				document.getElementById("mypara2").style.color="blue";
+			}
+			function warn2(){
+				var ln=document.getElementById("lastname").value;
+				if(ln==""){
+					document.getElementById("mypara2").innerHTML="Enter lastname";
+					document.getElementById("mypara2").style.color="red";
+				}
+				else{
+					document.getElementById("mypara2").innerHTML="";
+				}
+			}
+
+
+			function instruct3(){
+				document.getElementById("mypara3").innerHTML="Enter mobile number";
+				document.getElementById("mypara3").style.color="blue";
+			}
+			function warn3(){
+				var mn=document.getElementById("mobilenumber").value;
+				if(mn==""){
+					document.getElementById("mypara3").innerHTML="Enter mobile number";
+					document.getElementById("mypara3").style.color="red";
+				}
+				else{
+					document.getElementById("mypara3").innerHTML="";
+				}
+			}
+
+
+			function instruct4(){
+				document.getElementById("mypara4").innerHTML="Enter E-mail";
+				document.getElementById("mypara4").style.color="blue";
+			}
+			function warn4(){
+				var em=document.getElementById("email").value;
+				if(em==""){
+					document.getElementById("mypara4").innerHTML="Enter email";
+					document.getElementById("mypara4").style.color="red";
+				}
+				else{
+					document.getElementById("mypara4").innerHTML="";
+				}
+			}
+
+
+			function instruct5(){
+				document.getElementById("mypara5").innerHTML="Enter username";
+				document.getElementById("mypara5").style.color="blue";
+			}
+			function warn5(){
+				var un=document.getElementById("username").value;
+				if(un==""){
+					document.getElementById("mypara5").innerHTML="Enter username";
+					document.getElementById("mypara5").style.color="red";
+				}
+				else{
+					document.getElementById("mypara5").innerHTML="";
+				}
+			}
+
+
+			function instruct6(){
+				document.getElementById("mypara6").innerHTML="Enter password";
+				document.getElementById("mypara6").style.color="blue";
+			}
+			function warn6(){
+				var pwd=document.getElementById("password").value;
+				if(pwd==""){
+					document.getElementById("mypara6").innerHTML="Enter password";
+					document.getElementById("mypara6").style.color="red";
+				}
+				else{
+					document.getElementById("mypara6").innerHTML="";
+				}
+			}
+
+
+			function instruct7(){
+				document.getElementById("mypara7").innerHTML="Confirm password";
+				document.getElementById("mypara7").style.color="blue";
+			}
+			function warn7(){
+				var pwd=document.getElementById("password").value;
+				var cnfpwd=document.getElementById("cnfpassword").value;
+				if(pwd!=cnfpwd){
+					document.getElementById("mypara7").innerHTML="Password not matched";
+					document.getElementById("mypara7").style.color="red";
+				}
+				else{
+					document.getElementById("mypara7").innerHTML="";
+				}
+			}
+
+
+			
+			function fun1(event){
+				var ch=event.which;
+				if(!((ch>=65&&ch<=90) || (ch>=97&&ch<=122) || (ch==32) || (ch==0) || (ch==8))){
+					event.preventDefault();
+				}
+			}
+			function fun2(event){
+				var ch=event.which;
+				if(!((ch>=48 && ch<=57) || (ch==32) || (ch==0) || (ch==8))){
+					event.preventDefault();
+				}
+			}
+			document.getElementById("firstname").addEventListener("keypress",fun1());
+			document.getElementById("lastname").addEventListener("keypress",fun1);
+			document.getElementById("mobilenumber").addEventListener("keypress",fun2);
+		</script>
+	</head>
+	<body style="background-color:#EBF1F1">
+		<h1 class="fontclass"><b>Register a Doctor</b></h1>
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-md-4">
+				</div>
+				<div class="col-md-4 formdiv">
+					<form name="registrationform" class="form-group" method="post" action="registerdoctor">
+						<label class="fontclass">First name</label>
+						<input type="text" class="form-control fontclass" name="firstname" id="firstname" placeholder="Enter firstname"" onfocus="instruct1()" onblur="warn1()">
+						<p id="mypara1"></p>
+						<label class="fontclass">Last name</label>
+						<input type="text" class="form-control fontclass" name="lastname" id="lastname" placeholder="Enter lastname" onfocus="instruct2()" onblur="warn2()">
+						<p id="mypara2"></p>
+				<!--	<label>Gender</label>
+						<select class="form-control">
+							<option value="">Select</option>
+							<option value="male">male</option>
+							<option value="female">female</option>
+							<option value="other">other</option>
+						</select>
+				-->
+						<label class="fontclass">Mobile number</label>
+						<input type="text" class="form-control fontclass" name="mobilenumber" maxlength="10" id="mobilenumber" placeholder="Enter mobilenumber" onfocus="instruct3()" onblur="warn3()">
+						<p id="mypara3"></p>
+						<label class="fontclass">E-mail</label>
+						<input type="email" class="form-control fontclass" name="email" id="email" placeholder="Enter email" onfocus="instruct4()" onblur="warn4()">
+						<p id="mypara4"></p>
+						<label class="fontclass">User name</label>
+						<input type="text" class="form-control fontclass" name="username" id="username" placeholder="Enter username" onfocus="instruct5()" onblur="warn5()">
+						<p id="mypara5"></p>
+						<label class="fontclass">Password</label>
+						<input type="text" class="form-control fontclass" name="password" id="password" placeholder="Enter password" onfocus="instruct6()" onblur="warn6()">
+						<p id="mypara6"></p>
+						<label class="fontclass">Confirm password</label>
+						<input type="text" class="form-control fontclass" name="cnfpassword" id="cnfpassword" placeholder="Confirm password" onfocus="instruct7()" onblur="warn7()">
+						<p id="mypara7"></p>
+						<center>
+							<button class="btn subbtn" type="submit" id="subbtn" onclick="return disp()">Submit</button>
+						</center>
+					</form>
+				</div>
+				<div class="col-md-4">
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
