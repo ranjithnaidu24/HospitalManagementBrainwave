@@ -1,239 +1,218 @@
 <!DOCTYPE html>
-<html>
-	<head>
-		<meta charset="ISO-8859-1">
-		<title>Register here</title>
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
-		
-		<script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.slim.min.js"></script>
-		<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
-		<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
-		
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-		<style>
-			.formdiv{
-			border:1px solid black;
-			border-radius:20px 20px 20px 20px;
-			}
-			.fontclass{
-			font-family:Times New Roman;
-			}
-			.subbtn{
-			background-color:#0bee79;
-			}
-			.subbtn:hover{
-			transform:scale(1.1);
-			}
-		</style>
-		<script>
-			function disp(){
-				var fname=document.getElementById("firstname").value;
-				var lname=document.getElementById("lastname").value;
-				var mnum=document.getElementById("mobilenumber").value;
-				var mail=document.getElementById("email").value;
-				var uname=document.getElementById("username").value;
-				var pword=document.getElementById("password").value;
-				var cnfpwd=document.getElementById("cnfpassword").value;
-				if(fname==""||lname==""||mnum==""||mail==""||uname==""||pword==""||cnfpwd==""){
-					document.getElementById("mypara1").innerHTML="*Enter firstname";
-					document.getElementById("mypara1").style.color="red";
-					document.getElementById("mypara2").innerHTML="*Enter lastname";
-					document.getElementById("mypara2").style.color="red";
-					document.getElementById("mypara3").innerHTML="*Enter mobilenumber";
-					document.getElementById("mypara3").style.color="red";
-					document.getElementById("mypara4").innerHTML="*Enter email";
-					document.getElementById("mypara4").style.color="red";
-					document.getElementById("mypara5").innerHTML="*Enter username";
-					document.getElementById("mypara5").style.color="red";
-					document.getElementById("mypara6").innerHTML="*Enter password";
-					document.getElementById("mypara6").style.color="red";
-					document.getElementById("mypara7").innerHTML="*Confirm password";
-					document.getElementById("mypara7").style.color="red";
-					return false;
-				}
-				else{
-					return true;
-				}
-			}
-			function instruct1(){
-				document.getElementById("mypara1").innerHTML="Enter firstname";
-				document.getElementById("mypara1").style.color="blue";
-			}
-			function warn1(){
-				var fn=document.getElementById("firstname").value;
-				if(fn==""){
-					document.getElementById("mypara1").innerHTML="Enter firstname";
-					document.getElementById("mypara1").style.color="red";
-				}
-				else{
-					document.getElementById("mypara1").innerHTML="";
-				}
-			}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doctor Registration</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
 
+    <style>
+        body {
+            background-color: #EBF1F1;
+            font-family: 'Arial', sans-serif;
+            position: relative; /* Needed for absolute positioning of the back button */
+        }
 
-			function instruct2(){
-				document.getElementById("mypara2").innerHTML="Enter lastname";
-				document.getElementById("mypara2").style.color="blue";
-			}
-			function warn2(){
-				var ln=document.getElementById("lastname").value;
-				if(ln==""){
-					document.getElementById("mypara2").innerHTML="Enter lastname";
-					document.getElementById("mypara2").style.color="red";
-				}
-				else{
-					document.getElementById("mypara2").innerHTML="";
-				}
-			}
+        h1 {
+            text-align: center;
+            margin-top: 20px;
+            color: #1a3b6e;
+            font-weight: bold;
+        }
 
+        .form-container {
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            padding: 40px;
+            margin: auto;
+            max-width: 700px;
+        }
 
-			function instruct3(){
-				document.getElementById("mypara3").innerHTML="Enter mobile number";
-				document.getElementById("mypara3").style.color="blue";
-			}
-			function warn3(){
-				var mn=document.getElementById("mobilenumber").value;
-				if(mn==""){
-					document.getElementById("mypara3").innerHTML="Enter mobile number";
-					document.getElementById("mypara3").style.color="red";
-				}
-				else{
-					document.getElementById("mypara3").innerHTML="";
-				}
-			}
+        .form-group {
+            position: relative;
+            margin-bottom: 30px;
+        }
 
+        .error-message {
+            color: red;
+            font-size: 14px;
+            margin-top: 5px; /* Space above the error message */
+            display: none; /* Initially hidden */
+        }
 
-			function instruct4(){
-				document.getElementById("mypara4").innerHTML="Enter E-mail";
-				document.getElementById("mypara4").style.color="blue";
-			}
-			function warn4(){
-				var em=document.getElementById("email").value;
-				if(em==""){
-					document.getElementById("mypara4").innerHTML="Enter email";
-					document.getElementById("mypara4").style.color="red";
-				}
-				else{
-					document.getElementById("mypara4").innerHTML="";
-				}
-			}
+        .error-message.visible {
+            display: block; /* Show when needed */
+        }
 
+        .subbtn {
+            background-color: #007BFF; /* Change to a blue color */
+            color: white;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background-color 0.3s, transform 0.3s;
+        }
 
-			function instruct5(){
-				document.getElementById("mypara5").innerHTML="Enter username";
-				document.getElementById("mypara5").style.color="blue";
-			}
-			function warn5(){
-				var un=document.getElementById("username").value;
-				if(un==""){
-					document.getElementById("mypara5").innerHTML="Enter username";
-					document.getElementById("mypara5").style.color="red";
-				}
-				else{
-					document.getElementById("mypara5").innerHTML="";
-				}
-			}
+        .subbtn:hover {
+            background-color: #0056b3; /* Darker blue on hover */
+            transform: scale(1.05);
+        }
 
+        .backbtn {
+            background-color: #6c757d; /* Grey color for back button */
+            color: white;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background-color 0.3s, transform 0.3s;
+            position: absolute; /* Absolute positioning */
+            top: 20px; /* Distance from the top */
+            right: 20px; /* Distance from the right */
+        }
 
-			function instruct6(){
-				document.getElementById("mypara6").innerHTML="Enter password";
-				document.getElementById("mypara6").style.color="blue";
-			}
-			function warn6(){
-				var pwd=document.getElementById("password").value;
-				if(pwd==""){
-					document.getElementById("mypara6").innerHTML="Enter password";
-					document.getElementById("mypara6").style.color="red";
-				}
-				else{
-					document.getElementById("mypara6").innerHTML="";
-				}
-			}
+        .backbtn:hover {
+            background-color: #5a6268; /* Darker grey on hover */
+            transform: scale(1.05);
+        }
 
+        @media (max-width: 576px) {
+            .form-container {
+                width: 90%;
+            }
+        }
+    </style>
 
-			function instruct7(){
-				document.getElementById("mypara7").innerHTML="Confirm password";
-				document.getElementById("mypara7").style.color="blue";
-			}
-			function warn7(){
-				var pwd=document.getElementById("password").value;
-				var cnfpwd=document.getElementById("cnfpassword").value;
-				if(pwd!=cnfpwd){
-					document.getElementById("mypara7").innerHTML="Password not matched";
-					document.getElementById("mypara7").style.color="red";
-				}
-				else{
-					document.getElementById("mypara7").innerHTML="";
-				}
-			}
+    <script>
+        function validateField(fieldId, errorId, message) {
+            var fieldValue = document.getElementById(fieldId).value;
+            if (fieldValue === "") {
+                document.getElementById(errorId).innerHTML = "*" + message;
+                document.getElementById(errorId).classList.add("visible");
+            } else {
+                document.getElementById(errorId).innerHTML = "";
+                document.getElementById(errorId).classList.remove("visible");
+            }
+        }
 
+        function validateConfirmPassword() {
+            var pwd = document.getElementById("password").value;
+            var cnfPwd = document.getElementById("cnfpassword").value;
+            var errorMsg = document.getElementById("mypara7");
 
-			
-			function fun1(event){
-				var ch=event.which;
-				if(!((ch>=65&&ch<=90) || (ch>=97&&ch<=122) || (ch==32) || (ch==0) || (ch==8))){
-					event.preventDefault();
-				}
-			}
-			function fun2(event){
-				var ch=event.which;
-				if(!((ch>=48 && ch<=57) || (ch==32) || (ch==0) || (ch==8))){
-					event.preventDefault();
-				}
-			}
-			document.getElementById("firstname").addEventListener("keypress",fun1());
-			document.getElementById("lastname").addEventListener("keypress",fun1);
-			document.getElementById("mobilenumber").addEventListener("keypress",fun2);
-		</script>
-	</head>
-	<body style="background-color:#EBF1F1">
-		<h1 class="fontclass"><b>Register a Doctor</b></h1>
-		<div class="container-fluid">
-			<div class="row">
-				<div class="col-md-4">
-				</div>
-				<div class="col-md-4 formdiv">
-					<form name="registrationform" class="form-group" method="post" action="registerdoctor">
-						<label class="fontclass">First name</label>
-						<input type="text" class="form-control fontclass" name="firstname" id="firstname" placeholder="Enter firstname"" onfocus="instruct1()" onblur="warn1()">
-						<p id="mypara1"></p>
-						<label class="fontclass">Last name</label>
-						<input type="text" class="form-control fontclass" name="lastname" id="lastname" placeholder="Enter lastname" onfocus="instruct2()" onblur="warn2()">
-						<p id="mypara2"></p>
-				<!--	<label>Gender</label>
-						<select class="form-control">
-							<option value="">Select</option>
-							<option value="male">male</option>
-							<option value="female">female</option>
-							<option value="other">other</option>
-						</select>
-				-->
-						<label class="fontclass">Mobile number</label>
-						<input type="text" class="form-control fontclass" name="mobilenumber" maxlength="10" id="mobilenumber" placeholder="Enter mobilenumber" onfocus="instruct3()" onblur="warn3()">
-						<p id="mypara3"></p>
-						<label class="fontclass">E-mail</label>
-						<input type="email" class="form-control fontclass" name="email" id="email" placeholder="Enter email" onfocus="instruct4()" onblur="warn4()">
-						<p id="mypara4"></p>
-						<label class="fontclass">User name</label>
-						<input type="text" class="form-control fontclass" name="username" id="username" placeholder="Enter username" onfocus="instruct5()" onblur="warn5()">
-						<p id="mypara5"></p>
-						<label class="fontclass">Password</label>
-						<input type="text" class="form-control fontclass" name="password" id="password" placeholder="Enter password" onfocus="instruct6()" onblur="warn6()">
-						<p id="mypara6"></p>
-						<label class="fontclass">Confirm password</label>
-						<input type="text" class="form-control fontclass" name="cnfpassword" id="cnfpassword" placeholder="Confirm password" onfocus="instruct7()" onblur="warn7()">
-						<p id="mypara7"></p>
-						<center>
-							<button class="btn subbtn" type="submit" id="subbtn" onclick="return disp()">Submit</button>
-						</center>
-					</form>
-				</div>
-				<div class="col-md-4">
-				</div>
-			</div>
-		</div>
-	</body>
+            if (cnfPwd === "") {
+                errorMsg.innerHTML = "*Confirm password is required";
+                errorMsg.classList.add("visible");
+            } else if (pwd !== cnfPwd) {
+                errorMsg.innerHTML = "Passwords do not match";
+                errorMsg.classList.add("visible");
+            } else {
+                errorMsg.innerHTML = "";
+                errorMsg.classList.remove("visible");
+            }
+        }
+
+        function disp() {
+            var fields = [
+                { id: "firstname", message: "Enter first name", errorId: "mypara1" },
+                { id: "lastname", message: "Enter last name", errorId: "mypara2" },
+                { id: "mobilenumber", message: "Enter mobile number", errorId: "mypara3" },
+                { id: "email", message: "Enter email", errorId: "mypara4" },
+                { id: "username", message: "Enter username", errorId: "mypara5" },
+                { id: "password", message: "Enter password", errorId: "mypara6" }
+            ];
+
+            var hasError = false;
+
+            fields.forEach(function(field) {
+                validateField(field.id, field.errorId, field.message);
+                if (document.getElementById(field.errorId).classList.contains("visible")) {
+                    hasError = true;
+                }
+            });
+
+            // Validate confirm password
+            validateConfirmPassword();
+            if (document.getElementById("mypara7").classList.contains("visible")) {
+                hasError = true;
+            }
+
+            return !hasError; // If there are no errors, allow form submission
+        }
+    </script>
+</head>
+<body>
+    <h1><b>Doctor Registration</b></h1>
+    <button class="btn backbtn" type="button" onclick="window.location.href='adminhome.jsp'">Back</button> <!-- Back button positioned at the top right -->
+    <div class="container-fluid">
+        <div class="form-container">
+            <form name="registrationform" method="post" action="registerdoctor" onsubmit="return disp()">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label>First Name</label>
+                            <input type="text" class="form-control" name="firstname" id="firstname" placeholder="Enter first name" onblur="validateField('firstname', 'mypara1', 'Enter first name')">
+                            <p id="mypara1" class="error-message"></p>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label>Last Name</label>
+                            <input type="text" class="form-control" name="lastname" id="lastname" placeholder="Enter last name" onblur="validateField('lastname', 'mypara2', 'Enter last name')">
+                            <p id="mypara2" class="error-message"></p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label>Mobile Number</label>
+                            <input type="text" class="form-control" name="mobilenumber" id="mobilenumber" maxlength="10" placeholder="Enter mobile number" onblur="validateField('mobilenumber', 'mypara3', 'Enter mobile number')">
+                            <p id="mypara3" class="error-message"></p>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label>E-mail</label>
+                            <input type="email" class="form-control" name="email" id="email" placeholder="Enter email" onblur="validateField('email', 'mypara4', 'Enter email')">
+                            <p id="mypara4" class="error-message"></p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label>Username</label>
+                            <input type="text" class="form-control" name="username" id="username" placeholder="Enter username" onblur="validateField('username', 'mypara5', 'Enter username')">
+                            <p id="mypara5" class="error-message"></p>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label>Password</label>
+                            <input type="password" class="form-control" name="password" id="password" placeholder="Enter password" onblur="validateField('password', 'mypara6', 'Enter password')">
+                            <p id="mypara6" class="error-message"></p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>Confirm Password</label>
+                    <input type="password" class="form-control" name="cnfpassword" id="cnfpassword" placeholder="Confirm password" onblur="validateConfirmPassword()">
+                    <p id="mypara7" class="error-message"></p>
+                </div>
+
+                <center>
+                    <button class="btn subbtn" type="submit">Submit</button><br>
+                </center>
+            </form>
+        </div>
+    </div>
+</body>
 </html>

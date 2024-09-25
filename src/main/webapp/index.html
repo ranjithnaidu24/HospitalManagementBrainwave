@@ -1,143 +1,283 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <title>welcome home page</title>
-        <link rel="stylesheet" href="stylesheetHosp.css">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+<html lang="en">
 
-        <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.slim.min.js"></script>
-		<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
-		<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Hospital Name</title>
+	<style>
+		body {
+			font-family: 'Georgia', serif;
+			margin: 0;
+			padding: 0;
+			background-color: #f5f5f5;
+			color: #333;
+		}
 
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-		
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-        <style>
-        	.dropdown-content {
-			  display: none;
-			  position: absolute;
-			  background-color: #f9f9f9;
-			  min-width: 160px;
-			  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-			  z-index: 1;
-			}
-			.dropdown:hover .dropdown-content {
-			  display: block;
-			}
-			.dropdown-content a {
-			  float: none;
-			  color: black;
-			  padding: 12px 16px;
-			  text-decoration: none;
-			  display: block;
-			  text-align: left;
-			}
-			.dropdown .dropbtn {
-			  font-size: 16px;  
-			  border: none;
-			  outline: none;
-			  color: Black;
-			  padding: 13px 16px;
-			  background-color: inherit;
-			  font-family: inherit;
-			  margin: 0;
-			}
-			.fontclass{
-			font-family:Times New Roman;
-			}
-			.navbar{
-			background-color:#D4D8D8;
-			border-radius:20px 20px 20px 20px;
-			}
-			.logbtn:hover{
-			color:black;
-			background-color:#EAEFEF;
-			border-radius:20px 20px 20px 20px;
-			}
-			.drpbtn:hover{
-			background-color:#EAEFEF;
-			border-radius:15px 15px 15px 15px;
-			}
-			.bradius30{
-			border-radius:30px 30px 30px 30px;
-			}
-			div.scroll-container {
-			background-color: #333;
-			overflow: auto;
-			white-space: nowrap;
-			padding: 10px;
-			}
-			div.scroll-container img{
-			padding: 10px;
-			}
-			.anchortag:hover{
+		header {
+			background: linear-gradient(135deg, #1a3b6e, #4a7bbb);
+			color: white;
+			padding: 40px 20px;
+			text-align: center;
+			box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+		}
+
+		header h1 {
+			font-size: 48px;
+			font-weight: bold;
+			margin: 0;
+			letter-spacing: 2px;
+		}
+
+		header p {
+			font-size: 20px;
+			font-style: italic;
+		}
+
+		nav {
+			background-color: #1a3b6e;
+			padding: 15px 0;
+			box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+		}
+
+		nav ul {
+			display: flex;
+			justify-content: center;
+			list-style-type: none;
+			padding: 0;
+			margin: 0;
+		}
+
+		nav ul li {
+			margin: 0 20px;
+		}
+
+		nav a {
+			color: white;
 			text-decoration: none;
-			}
-        </style>
-    </head>
-    <body style="background-color:#EBF1F1">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-md-12">
-                    <nav class="navbar navbar-expand-md">
-                        <ul class="navbar-nav">
-                            <div class="dropdown">
-                            	<button class="dropbtn btn logbtn"><p class="fontclass" style="font-size:18px"> Login</p></button>
-                            	<div class="dropdown-content" style="border-radius:20px">
-                            	<a class="logbtn" href="adminlogin.html"><p class="fontclass"> Admin. Login</p></a>
-                            	<a class="logbtn" href="doctorlogin.html"><p class="fontclass"> Doctor Login</p></a>
-                            	<a class="logbtn" href="patientlogin.html"><p class="fontclass"> Patient Login</p></a>
-                            	</div>
-                            </div>
-                            <button class="btn logbtn"><a class="anchortag" href="patientregister.html"><font color="black"><p class="fontclass" style="font-size:18px"> Register as patient</p></font></a></button>
-                        </ul>
-                    </nav>
-                </div>
-            </div>
-        </div>
-        <h1 class="fontclass"><b>Welcome to Default home page</b></h1>
-        <div class="container-fluid">
-            <div class="row">
-            	<div class="col-md-3">
-            	</div>
-                <div class="col-md-6">
-                	<div id="mycarousel" class="carousel slide" data-ride="carousel">
-	                    <ol class="carousel-indicators">
-	                        <li data-target="#mycarousel" data-slide-to="0" class="active"></li>
-	                        <li data-target="#mycarousel" data-slide-to="1"></li>
-	                        <li data-target="#mycarousel" data-slide-to="2"></li>
-	                        <li data-target="#mycarousel" data-slide-to="3"></li>
-	                    </ol>
-	                    <div class="carousel-inner">
-	                        <div class="carousel-item active">
-	                            <img src="Hospimage1.jpg" alt="Hospimage1.jpg" class="d-block w-100 bradius30">
-	                        </div>
-	                        <div class="carousel-item">
-	                            <img src="Hospimage2.jpg" alt="Hospimage2.jpg" class="d-block w-100 bradius30">
-	                        </div>
-	                        <div class="carousel-item">
-	                            <img src="Hospimage3.jpg" alt="Hospimage3.jpg" class="d-block w-100 bradius30">
-	                        </div>
-	                        <div class="carousel-item">
-	                            <img src="Hospimage4.jpg" alt="Hospimage4.jpg" class="d-block w-100 bradius30">
-	                        </div>
-	                    </div>
-	                    <a class="carousel-control-prev" href="#mycarousel" role="button" data-slide="prev">
-	                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-	                        <span class="sr-only">Previous</span>
-	                    </a>
-	                    <a class="carousel-control-next" href="#mycarousel" role="button" data-slide="next">
-	                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-	                        <span class="sr-only">Next</span>
-	                    </a>
-                	</div>
-                </div>
-                <div class="col-md-3">
-            	</div>
-            </div>
-        </div>
-    </body>
+			font-size: 18px;
+			padding: 10px 20px;
+			border-radius: 5px;
+			transition: background-color 0.3s ease;
+		}
+
+		nav a:hover {
+			background-color: #335a8b;
+		}
+
+		.main-content {
+			padding: 40px;
+			background-color: #e6e6e6;
+		}
+
+		.services-section,
+		.contact-section,
+		.doctors-section,
+		.testimonials-section,
+		.departments-section,
+		.news-section,
+		.insurance-section,
+		.careers-section,
+		.about-section {
+			background-color: white;
+			padding: 30px;
+			margin: 20px 0;
+			border-radius: 12px;
+			box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+			transition: transform 0.3s ease;
+		}
+
+		section:hover {
+			transform: translateY(-5px);
+		}
+
+		h2 {
+			font-size: 32px;
+			color: #1a3b6e;
+			border-bottom: 2px solid #1a3b6e;
+			padding-bottom: 10px;
+			margin-bottom: 20px;
+		}
+
+		ul {
+			list-style-type: none;
+			padding: 0;
+		}
+
+		ul li {
+			font-size: 20px;
+			padding: 10px 0;
+			border-bottom: 1px solid #ddd;
+		}
+
+		footer {
+			background-color: #1a3b6e;
+			color: white;
+			text-align: center;
+			padding: 20px;
+			font-size: 16px;
+			margin-top: 40px;
+			box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.1);
+		}
+
+		.btn {
+			background-color: #4a7bbb;
+			color: white;
+			border: none;
+			padding: 10px 20px;
+			cursor: pointer;
+			border-radius: 8px;
+			transition: background-color 0.3s ease;
+			font-size: 16px;
+		}
+
+		.btn a {
+			text-decoration: none;
+			color: white;
+		}
+
+		.btn:hover {
+			background-color: #335a8b;
+		}
+
+		.dropdown-content {
+			background-color: #f9f9f9;
+			box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1);
+		}
+
+		.dropdown-content a:hover {
+			background-color: #ddd;
+		}
+	</style>
+</head>
+
+<body>
+
+	<header>
+		<h1>Welcome to Hospital Name</h1>
+		<p>Your Health, Our Priority</p>
+	</header>
+
+	<!-- Updated Navigation with Dropdown -->
+	<nav class="navbar navbar-expand-md">
+		<ul class="navbar-nav">
+			<li><a href="#">Home</a></li>
+			<li><a href="#">Services</a></li>
+			<li><a href="#">Doctors</a></li>
+			<li><a href="#">Contact</a></li>
+			<li><a href="patientregister.html">Register as User</a></li>
+			<li><a href="patientlogin.html">Patient Login</a></li>
+			<li><a href="doctorlogin.html">Doctor Login</a></li>
+			<li><a href="adminlogin.html">Admin Login</a></li>
+		</ul>
+	</nav>
+
+	<div class="main-content">
+		<section class="services-section">
+			<h2>Our Services</h2>
+			<ul>
+				<li>Emergency Care</li>
+				<li>Outpatient Services</li>
+				<li>Cardiology</li>
+				<li>Maternity</li>
+				<li>Physical Therapy</li>
+			</ul>
+		</section>
+
+		<section class="doctors-section">
+			<h2>Our Expert Doctors</h2>
+			<div class="doctor">
+				<h3>Dr. John Doe, MD</h3>
+				<p>Chief of Cardiology with over 15 years of experience in treating complex heart conditions.</p>
+			</div>
+			<div class="doctor">
+				<h3>Dr. Sarah Lee, MD</h3>
+				<p>Leading Obstetrician and Gynecologist specializing in women’s health and maternity care.</p>
+			</div>
+			<div class="doctor">
+				<h3>Dr. Ahmed Khan, MD</h3>
+				<p>Renowned Orthopedic Surgeon with a focus on sports injuries and physical rehabilitation.</p>
+			</div>
+		</section>
+
+		<section class="testimonials-section">
+			<h2>What Our Patients Say</h2>
+			<blockquote>
+				<p>"The doctors and nurses at Hospital Name made me feel cared for and supported during a very difficult
+					time. Their professionalism and compassion are unmatched." - Jane D.</p>
+			</blockquote>
+			<blockquote>
+				<p>"I was impressed with the level of expertise and state-of-the-art facilities. The staff truly went
+					above and beyond." - Mark S.</p>
+			</blockquote>
+		</section>
+
+		<section class="departments-section">
+			<h2>Our Departments</h2>
+			<ul>
+				<li>Cardiology</li>
+				<li>Neurology</li>
+				<li>Oncology</li>
+				<li>Orthopedics</li>
+				<li>Pediatrics</li>
+				<li>Mental Health</li>
+				<li>Dermatology</li>
+			</ul>
+		</section>
+
+		<section class="news-section">
+			<h2>Latest News & Updates</h2>
+			<article>
+				<h3>New Cardiology Wing Opening Soon</h3>
+				<p>We are excited to announce the opening of our new state-of-the-art cardiology wing. Opening in Spring
+					2024.</p>
+			</article>
+			<article>
+				<h3>Dr. Sarah Lee Joins Our Team</h3>
+				<p>We are thrilled to welcome Dr. Sarah Lee, a leading expert in women's health and obstetrics, to our
+					team.</p>
+			</article>
+		</section>
+
+		<section class="insurance-section">
+			<h2>Insurance & Payment Information</h2>
+			<p>We accept most major insurance providers, including:</p>
+			<ul>
+				<li>HealthCare Plus</li>
+				<li>Medicare</li>
+				<li>Global Health Insurance</li>
+				<li>Wellness Plan</li>
+			</ul>
+			<p>For more information, please <a href="insurance.html">click here</a>.</p>
+		</section>
+
+		<section class="careers-section">
+			<h2>Join Our Team</h2>
+			<p>We are always looking for passionate individuals to join our growing team of healthcare professionals. To
+				explore career opportunities, <a href="careers.html">click here</a>.</p>
+		</section>
+
+		<section class="contact-section">
+			<h2>Contact Us</h2>
+			<p>Address: 1234 Health St, Care City</p>
+			<p>Phone: (123) 456-7890</p>
+			<p>Email: info@hospitalname.com</p>
+		</section>
+
+		<section class="about-section">
+			<h2>About Us</h2>
+			<p>Hospital Name has been at the forefront of medical excellence for over 25 years, providing top-notch care
+				to patients. Our mission is to deliver compassionate and high-quality healthcare that is accessible to
+				everyone. We specialize in a wide range of services and are committed to continuous innovation and
+				excellence in patient care.</p>
+			<p>We believe in holistic healing, where every patient is treated with care, respect, and dignity.</p>
+		</section>
+	</div>
+
+	<footer>
+		<p>&copy; 2024 Hospital Name. All rights reserved.</p>
+	</footer>
+
+</body>
+
 </html>

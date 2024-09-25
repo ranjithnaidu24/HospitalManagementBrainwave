@@ -1,134 +1,136 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-<title>administration home page</title>
-<link rel="stylesheet" href="stylesheetHosp.css">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet"
-	href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Administration Home Page</title>
+    <link rel="stylesheet" href="stylesheetHosp.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-<script
-	src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.slim.min.js"></script>
-<script
-	src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
-<script
-	src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+    <style>
+        body {
+            font-family: 'Georgia', serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+            color: #333;
+        }
 
-<link rel="stylesheet"
-	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-<script
-	src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script
-	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        header {
+            background: linear-gradient(135deg, #1a3b6e, #4a7bbb);
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
 
-<link rel="stylesheet"
-	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<style>
-.dropdown-content {
-	display: none;
-	position: absolute;
-	background-color: #f9f9f9;
-	min-width: 160px;
-	box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-	z-index: 1;
-}
+        header h1 {
+            font-size: 48px;
+            font-weight: bold;
+            margin: 0;
+            letter-spacing: 2px;
+        }
 
-.dropdown:hover .dropdown-content {
-	display: block;
-}
+        nav {
+            background-color: #1a3b6e;
+            padding: 15px 0;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
 
-.dropdown-content a {
-	float: none;
-	color: black;
-	padding: 12px 16px;
-	text-decoration: none;
-	display: block;
-	text-align: left;
-}
+        nav ul {
+            display: flex;
+            justify-content: center;
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
 
-.dropdown .dropbtn {
-	font-size: 16px;
-	border: none;
-	outline: none;
-	color: Black;
-	padding: 13px 16px;
-	background-color: inherit;
-	font-family: inherit;
-	margin: 0;
-}
+        nav ul li {
+            margin: 0 20px;
+        }
 
-.navbar {
-	background-color: #E6EEEE;
-}
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+            padding: 10px 20px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
 
-#addbtn {
-	color: black;
-	box-shadow: 5px 5px gray;
-}
+        nav a:hover {
+            background-color: #335a8b;
+        }
 
-.hero-image {
-	background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.7)),
-		url("Hospimage1.jpg");
-	height: 375%;
-	width: 100%;
-	background-position: center;
-	background-repeat: no-repeat;
-	background-size: cover;
-	position: relative;
-	border-radius: 30px 30px 30px 30px;
-}
+        .main-content {
+            padding: 40px;
+            text-align: center;
+            background-color: #e6e6e6;
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin: 40px auto;
+            width: 80%;
+        }
 
-.hero-text {
-	text-align: center;
-}
+        .btn {
+            background-color: #4a7bbb;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 8px;
+            transition: background-color 0.3s ease;
+            font-size: 16px;
+        }
 
-.fontclass {
-	font-family: Times New Roman;
-}
+        .btn:hover {
+            background-color: #335a8b;
+        }
 
-#logoutbtn {
-	position: absolute;
-	top: 30px;
-}
-</style>
+        footer {
+            background-color: #1a3b6e;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            font-size: 16px;
+            margin-top: 40px;
+            box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.1);
+        }
+    </style>
 </head>
-<body style="background-color: #EBF1F1">
-	<div class="container-fluid">
-		<div class="row">
-			<div class="col-md-12">
-				<nav class="navbar navbar-expand-md">
-					<ul class="navbar-nav">
-						<h1 class="fontclass">
-							<b>Admin home page</b>
-						</h1>
-						<form method="post" name="adminlogoutform" action="adminlogout">
-							<button type="submit" class="btn btn-success" id="logoutbtn"
-								name="logoutbtn">Logout</button>
-						</form>
-					</ul>
-				</nav>
-			</div>
-		</div>
-	</div>
-	<div class="container">
-		<div class="row">
-			<div class="col-md-12">
-				<div class="hero-image">
-					<div class="hero-text">
-						<h1 class="fontclass">
-							<b>Welcome <%=session.getAttribute("username") %></b>
-						</h1>
-						<p class="fontclass" style="font-size: 20px">
-							<b>Want to add a doctor ?</b>
-						</p>
-						<button type="button" class="btn btn-light" id="addbtn">
-							<a href="doctorregisterthroughadmin.html"><i
-								class="fa fa-plus" aria-hidden="true"></i> Add Doctor</a>
-						</button>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
+
+<body>
+    <header>
+        <h1>Welcome to Hospital Administration</h1>
+        <p>Your Management, Our Priority</p>
+    </header>
+
+    <nav class="navbar navbar-expand-md">
+        <ul class="navbar-nav">
+            <li class="nav-item"><a href="adminhome.html" class="nav-link"><i class="fa fa-home"></i> Home</a></li>
+            <form method="post" name="adminlogoutform" action="adminlogout" class="nav-item">
+                <button type="submit" class="btn btn-success" id="logoutbtn" name="logoutbtn">Logout</button>
+            </form>
+        </ul>
+    </nav>
+
+    <div class="main-content">
+        <h1>Welcome Admin <%=session.getAttribute("username") %></h1>
+        <p style="font-size: 20px"><b>Want to add a doctor?</b></p>
+        <button type="button" class="btn">
+            <a href="doctorregisterthroughadmin.html" style="color: white; text-decoration: none;"><i class="fa fa-plus" aria-hidden="true"></i> Add Doctor</a>
+        </button>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Hospital Name. All rights reserved.</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
+
 </html>
