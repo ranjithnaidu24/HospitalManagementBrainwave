@@ -2,153 +2,147 @@
 <html lang="en">
 
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Hospital Name</title>
-	<style>
-		body {
-			font-family: 'Georgia', serif;
-			margin: 0;
-			padding: 0;
-			background-color: #f5f5f5;
-			color: #333;
-		}
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>hospital home page</title>
+<style>
+body {
+	font-family: 'Georgia', serif;
+	margin: 0;
+	padding: 0;
+	background-color: #f5f5f5;
+	color: #333;
+}
 
-		header {
-			background: linear-gradient(135deg, #1a3b6e, #4a7bbb);
-			color: white;
-			padding: 40px 20px;
-			text-align: center;
-			box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-		}
+header {
+	background: linear-gradient(135deg, #1a3b6e, #4a7bbb);
+	color: white;
+	padding: 40px 20px;
+	text-align: center;
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
 
-		header h1 {
-			font-size: 48px;
-			font-weight: bold;
-			margin: 0;
-			letter-spacing: 2px;
-		}
+header h1 {
+	font-size: 48px;
+	font-weight: bold;
+	margin: 0;
+	letter-spacing: 2px;
+}
 
-		header p {
-			font-size: 20px;
-			font-style: italic;
-		}
+header p {
+	font-size: 20px;
+	font-style: italic;
+}
 
-		nav {
-			background-color: #1a3b6e;
-			padding: 15px 0;
-			box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-		}
+nav {
+	background-color: #1a3b6e;
+	padding: 15px 0;
+	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
 
-		nav ul {
-			display: flex;
-			justify-content: center;
-			list-style-type: none;
-			padding: 0;
-			margin: 0;
-		}
+nav ul {
+	display: flex;
+	justify-content: center;
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+}
 
-		nav ul li {
-			margin: 0 20px;
-		}
+nav ul li {
+	margin: 0 20px;
+}
 
-		nav a {
-			color: white;
-			text-decoration: none;
-			font-size: 18px;
-			padding: 10px 20px;
-			border-radius: 5px;
-			transition: background-color 0.3s ease;
-		}
+nav a {
+	color: white;
+	text-decoration: none;
+	font-size: 18px;
+	padding: 10px 20px;
+	border-radius: 5px;
+	transition: background-color 0.3s ease;
+}
 
-		nav a:hover {
-			background-color: #335a8b;
-		}
+nav a:hover {
+	background-color: #335a8b;
+}
 
-		.main-content {
-			padding: 40px;
-			background-color: #e6e6e6;
-		}
+.main-content {
+	padding: 40px;
+	background-color: #e6e6e6;
+}
 
-		.services-section,
-		.contact-section,
-		.doctors-section,
-		.testimonials-section,
-		.departments-section,
-		.news-section,
-		.insurance-section,
-		.careers-section,
-		.about-section {
-			background-color: white;
-			padding: 30px;
-			margin: 20px 0;
-			border-radius: 12px;
-			box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
-			transition: transform 0.3s ease;
-		}
+.services-section, .contact-section, .doctors-section,
+	.testimonials-section, .departments-section, .news-section,
+	.insurance-section, .careers-section, .about-section {
+	background-color: white;
+	padding: 30px;
+	margin: 20px 0;
+	border-radius: 12px;
+	box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+	transition: transform 0.3s ease;
+}
 
-		section:hover {
-			transform: translateY(-5px);
-		}
+section:hover {
+	transform: translateY(-5px);
+}
 
-		h2 {
-			font-size: 32px;
-			color: #1a3b6e;
-			border-bottom: 2px solid #1a3b6e;
-			padding-bottom: 10px;
-			margin-bottom: 20px;
-		}
+h2 {
+	font-size: 32px;
+	color: #1a3b6e;
+	border-bottom: 2px solid #1a3b6e;
+	padding-bottom: 10px;
+	margin-bottom: 20px;
+}
 
-		ul {
-			list-style-type: none;
-			padding: 0;
-		}
+ul {
+	list-style-type: none;
+	padding: 0;
+}
 
-		ul li {
-			font-size: 20px;
-			padding: 10px 0;
-			border-bottom: 1px solid #ddd;
-		}
+ul li {
+	font-size: 20px;
+	padding: 10px 0;
+	border-bottom: 1px solid #ddd;
+}
 
-		footer {
-			background-color: #1a3b6e;
-			color: white;
-			text-align: center;
-			padding: 20px;
-			font-size: 16px;
-			margin-top: 40px;
-			box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.1);
-		}
+footer {
+	background-color: #1a3b6e;
+	color: white;
+	text-align: center;
+	padding: 20px;
+	font-size: 16px;
+	margin-top: 40px;
+	box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.1);
+}
 
-		.btn {
-			background-color: #4a7bbb;
-			color: white;
-			border: none;
-			padding: 10px 20px;
-			cursor: pointer;
-			border-radius: 8px;
-			transition: background-color 0.3s ease;
-			font-size: 16px;
-		}
+.btn {
+	background-color: #4a7bbb;
+	color: white;
+	border: none;
+	padding: 10px 20px;
+	cursor: pointer;
+	border-radius: 8px;
+	transition: background-color 0.3s ease;
+	font-size: 16px;
+}
 
-		.btn a {
-			text-decoration: none;
-			color: white;
-		}
+.btn a {
+	text-decoration: none;
+	color: white;
+}
 
-		.btn:hover {
-			background-color: #335a8b;
-		}
+.btn:hover {
+	background-color: #335a8b;
+}
 
-		.dropdown-content {
-			background-color: #f9f9f9;
-			box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1);
-		}
+.dropdown-content {
+	background-color: #f9f9f9;
+	box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1);
+}
 
-		.dropdown-content a:hover {
-			background-color: #ddd;
-		}
-	</style>
+.dropdown-content a:hover {
+	background-color: #ddd;
+}
+</style>
 </head>
 
 <body>
@@ -188,27 +182,32 @@
 			<h2>Our Expert Doctors</h2>
 			<div class="doctor">
 				<h3>Dr. John Doe, MD</h3>
-				<p>Chief of Cardiology with over 15 years of experience in treating complex heart conditions.</p>
+				<p>Chief of Cardiology with over 15 years of experience in
+					treating complex heart conditions.</p>
 			</div>
 			<div class="doctor">
 				<h3>Dr. Sarah Lee, MD</h3>
-				<p>Leading Obstetrician and Gynecologist specializing in women’s health and maternity care.</p>
+				<p>Leading Obstetrician and Gynecologist specializing in women’s
+					health and maternity care.</p>
 			</div>
 			<div class="doctor">
 				<h3>Dr. Ahmed Khan, MD</h3>
-				<p>Renowned Orthopedic Surgeon with a focus on sports injuries and physical rehabilitation.</p>
+				<p>Renowned Orthopedic Surgeon with a focus on sports injuries
+					and physical rehabilitation.</p>
 			</div>
 		</section>
 
 		<section class="testimonials-section">
 			<h2>What Our Patients Say</h2>
 			<blockquote>
-				<p>"The doctors and nurses at Hospital Name made me feel cared for and supported during a very difficult
-					time. Their professionalism and compassion are unmatched." - Jane D.</p>
+				<p>"The doctors and nurses at Hospital Name made me feel cared
+					for and supported during a very difficult time. Their
+					professionalism and compassion are unmatched." - Jane D.</p>
 			</blockquote>
 			<blockquote>
-				<p>"I was impressed with the level of expertise and state-of-the-art facilities. The staff truly went
-					above and beyond." - Mark S.</p>
+				<p>"I was impressed with the level of expertise and
+					state-of-the-art facilities. The staff truly went above and
+					beyond." - Mark S.</p>
 			</blockquote>
 		</section>
 
@@ -229,13 +228,13 @@
 			<h2>Latest News & Updates</h2>
 			<article>
 				<h3>New Cardiology Wing Opening Soon</h3>
-				<p>We are excited to announce the opening of our new state-of-the-art cardiology wing. Opening in Spring
-					2024.</p>
+				<p>We are excited to announce the opening of our new
+					state-of-the-art cardiology wing. Opening in Spring 2024.</p>
 			</article>
 			<article>
 				<h3>Dr. Sarah Lee Joins Our Team</h3>
-				<p>We are thrilled to welcome Dr. Sarah Lee, a leading expert in women's health and obstetrics, to our
-					team.</p>
+				<p>We are thrilled to welcome Dr. Sarah Lee, a leading expert in
+					women's health and obstetrics, to our team.</p>
 			</article>
 		</section>
 
@@ -248,13 +247,18 @@
 				<li>Global Health Insurance</li>
 				<li>Wellness Plan</li>
 			</ul>
-			<p>For more information, please <a href="insurance.html">click here</a>.</p>
+			<p>
+				For more information, please <a href="insurance.html">click here</a>.
+			</p>
 		</section>
 
 		<section class="careers-section">
 			<h2>Join Our Team</h2>
-			<p>We are always looking for passionate individuals to join our growing team of healthcare professionals. To
-				explore career opportunities, <a href="careers.html">click here</a>.</p>
+			<p>
+				We are always looking for passionate individuals to join our growing
+				team of healthcare professionals. To explore career opportunities, <a
+					href="careers.html">click here</a>.
+			</p>
 		</section>
 
 		<section class="contact-section">
@@ -266,11 +270,14 @@
 
 		<section class="about-section">
 			<h2>About Us</h2>
-			<p>Hospital Name has been at the forefront of medical excellence for over 25 years, providing top-notch care
-				to patients. Our mission is to deliver compassionate and high-quality healthcare that is accessible to
-				everyone. We specialize in a wide range of services and are committed to continuous innovation and
-				excellence in patient care.</p>
-			<p>We believe in holistic healing, where every patient is treated with care, respect, and dignity.</p>
+			<p>Hospital Name has been at the forefront of medical excellence
+				for over 25 years, providing top-notch care to patients. Our mission
+				is to deliver compassionate and high-quality healthcare that is
+				accessible to everyone. We specialize in a wide range of services
+				and are committed to continuous innovation and excellence in patient
+				care.</p>
+			<p>We believe in holistic healing, where every patient is treated
+				with care, respect, and dignity.</p>
 		</section>
 	</div>
 

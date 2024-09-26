@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<%@ page import="com.model.GetDetailsOfDoctorsModel"%>
+<%@ page import="com.model.GetDoctorsFromAdminModel"%>
 <%@ page import="java.util.*"%>
 <html>
 <head>
@@ -101,29 +101,40 @@ footer {
 </head>
 <body style="background-color: #E7F1EF">
 	<h1 class="fontclass">
-		<b>Doctors</b>
+		<b>Doctors Details</b>
 	</h1>
 	<div class="container">
 		<table class="table table-hover">
 			<tr>
-				<th>Doctor name</th>
+				<th>Doctor id</th>
+				<th>first name</th>
+				<th>last name</th>
 				<th>mobile number</th>
 				<th>email</th>
+				<th>user name</th>
+				<th>password</th>
 			</tr>
 			<%
-	    		LinkedList<GetDetailsOfDoctorsModel> list=(LinkedList<GetDetailsOfDoctorsModel>)session.getAttribute("getDetailsofDoctors");
-	    		for(GetDetailsOfDoctorsModel get:list){
-	    		%>
+			LinkedList<GetDoctorsFromAdminModel> list = (LinkedList<GetDoctorsFromAdminModel>) session
+					.getAttribute("getDetailsofDoctors");
+			for (GetDoctorsFromAdminModel get : list) {
+			%>
 			<tr>
-				<td><%= get.getFirstname() + " " + get.getLastname() %></td>
-				<td><%= get.getMobilenumber() %></td>
-				<td><%= get.getEmail() %></td>
+				<td><%=get.getDoctorId()%></td>
+				<td><%=get.getFirstname()%></td>
+				<td><%=get.getLastname()%></td>
+				<td><%=get.getMobilenumber()%></td>
+				<td><%=get.getEmail()%></td>
+				<td><%=get.getUsername()%></td>
+				<td><%=get.getPassword()%></td>
 			</tr>
-			<%} %>
+			<%
+			}
+			%>
 		</table>
 		<button type="button" class="btn backbtn" id="addbtn">
-			<a style="text-decoration: none; color: white;"
-				href="patienthome.jsp"> back</a>
+			<a style="text-decoration: none; color: white;" href="adminhome.jsp">
+				back</a>
 		</button>
 	</div>
 </body>

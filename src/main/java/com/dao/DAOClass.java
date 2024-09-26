@@ -10,6 +10,7 @@ import com.model.AdminLoginModel;
 import com.model.DoctorLoginModel;
 import com.model.DoctorRegistrationModel;
 import com.model.GetDetailsOfDoctorsModel;
+import com.model.GetDoctorsFromAdminModel;
 import com.model.PatientLoginModel;
 import com.model.PatientRegistrationModel;
 
@@ -252,12 +253,39 @@ public class DAOClass implements DAOInterface {
 			ResultSet rs = ps.executeQuery();
 			rs.next();
 
-			while (rs.next()) {
+			do {
 				GetDetailsOfDoctorsModel gd1 = new GetDetailsOfDoctorsModel(rs.getString(1), rs.getString(2),
 						rs.getString(3), rs.getString(4));
 				ll.add(gd1);
-			}
+			} while (rs.next());
 			System.out.println("Doctors data from DAO " + ll);
+		} catch (Exception e) {
+			System.out.println(e);
+		}
+		return ll;
+	}
+
+	public LinkedList getDoctorsInAdmin(GetDoctorsFromAdminModel gd) {
+		LinkedList<GetDoctorsFromAdminModel> ll = new LinkedList<GetDoctorsFromAdminModel>();
+		try {
+			// loading the driver
+			Class.forName("com.mysql.cj.jdbc.Driver");
+
+			// connection establishing
+			Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/webprojectone", "root", "root");
+
+			// statements
+			PreparedStatement ps = con.prepareStatement("select * from Doctors");
+
+			ResultSet rs = ps.executeQuery();
+			rs.next();
+
+			do {
+				GetDoctorsFromAdminModel gd1 = new GetDoctorsFromAdminModel(rs.getInt(1), rs.getString(2),
+						rs.getString(3), rs.getString(4), rs.getString(5), rs.getString(6), rs.getString(7));
+				ll.add(gd1);
+				System.out.println("Added doctor: " + gd1); // Print each added doctor
+			} while (rs.next());
 		} catch (Exception e) {
 			System.out.println(e);
 		}
