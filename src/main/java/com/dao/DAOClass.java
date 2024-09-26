@@ -4,10 +4,12 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.util.LinkedList;
 
 import com.model.AdminLoginModel;
 import com.model.DoctorLoginModel;
 import com.model.DoctorRegistrationModel;
+import com.model.GetDetailsOfDoctorsModel;
 import com.model.PatientLoginModel;
 import com.model.PatientRegistrationModel;
 
@@ -233,5 +235,32 @@ public class DAOClass implements DAOInterface {
 
 		System.out.println("Returning login status to DoctorLoginServlet: " + status);
 		return status;
+	}
+
+	public LinkedList getDoctors(GetDetailsOfDoctorsModel gd) {
+		LinkedList<GetDetailsOfDoctorsModel> ll = new LinkedList<GetDetailsOfDoctorsModel>();
+		try {
+			// loading the driver
+			Class.forName("com.mysql.cj.jdbc.Driver");
+
+			// connection establishing
+			Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/webprojectone", "root", "root");
+
+			// statements
+			PreparedStatement ps = con.prepareStatement("select firstname, lastname, mobilenumber, email from Doctors");
+
+			ResultSet rs = ps.executeQuery();
+			rs.next();
+
+			while (rs.next()) {
+				GetDetailsOfDoctorsModel gd1 = new GetDetailsOfDoctorsModel(rs.getString(1), rs.getString(2),
+						rs.getString(3), rs.getString(4));
+				ll.add(gd1);
+			}
+			System.out.println("Doctors data from DAO " + ll);
+		} catch (Exception e) {
+			System.out.println(e);
+		}
+		return ll;
 	}
 }
