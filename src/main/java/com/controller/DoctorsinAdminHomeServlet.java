@@ -15,7 +15,7 @@ import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
 
 @WebServlet("/doctorsdetailsinadminhome")
-public class DoctorsinAdminHomeServlet extends HttpServlet {
+public class DoctorsInAdminHomeServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)

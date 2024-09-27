@@ -265,7 +265,8 @@ public class DAOClass implements DAOInterface {
 		return ll;
 	}
 
-	public LinkedList getDoctorsInAdmin(GetDoctorsFromAdminModel gd) {
+	@Override
+	public LinkedList getDoctorsInAdmin(GetDoctorsFromAdminModel gda) {
 		LinkedList<GetDoctorsFromAdminModel> ll = new LinkedList<GetDoctorsFromAdminModel>();
 		try {
 			// loading the driver

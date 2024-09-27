@@ -104,4 +104,14 @@
     <servlet-name>DoctorsinAdinHomeServlet</servlet-name>
     <url-pattern>/DoctorsinAdinHomeServlet</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>DoctorsInAdminHomeServlet</display-name>
+    <servlet-name>DoctorsInAdminHomeServlet</servlet-name>
+    <servlet-class>com.controller.DoctorsInAdminHomeServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>DoctorsInAdminHomeServlet</servlet-name>
+    <url-pattern>/DoctorsInAdminHomeServlet</url-pattern>
+  </servlet-mapping>
 </web-app>

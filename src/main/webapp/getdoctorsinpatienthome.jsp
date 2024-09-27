@@ -111,15 +111,18 @@ footer {
 				<th>email</th>
 			</tr>
 			<%
-	    		LinkedList<GetDetailsOfDoctorsModel> list=(LinkedList<GetDetailsOfDoctorsModel>)session.getAttribute("getDetailsofDoctors");
-	    		for(GetDetailsOfDoctorsModel get:list){
-	    		%>
+			LinkedList<GetDetailsOfDoctorsModel> list = (LinkedList<GetDetailsOfDoctorsModel>) session
+					.getAttribute("getDetailsofDoctors");
+			for (GetDetailsOfDoctorsModel get : list) {
+			%>
 			<tr>
-				<td><%= get.getFirstname() + " " + get.getLastname() %></td>
-				<td><%= get.getMobilenumber() %></td>
-				<td><%= get.getEmail() %></td>
+				<td><%=get.getFirstname() + " " + get.getLastname()%></td>
+				<td><%=get.getMobilenumber()%></td>
+				<td><%=get.getEmail()%></td>
 			</tr>
-			<%} %>
+			<%
+			}
+			%>
 		</table>
 		<button type="button" class="btn backbtn" id="addbtn">
 			<a style="text-decoration: none; color: white;"
