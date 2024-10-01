@@ -4,7 +4,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Administration Home Page</title>
+<title>admin home page</title>
 <link rel="stylesheet" href="stylesheetHosp.css">
 <link rel="stylesheet"
 	href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
@@ -113,7 +113,7 @@ footer {
 
 <body>
 	<header>
-		<h1>Welcome to Hospital Administration</h1>
+		<h1>Welcome to Indian Hospital Administration</h1>
 		<p>Your Management, Our Priority</p>
 	</header>
 
@@ -128,14 +128,16 @@ footer {
 			</form>
 		</ul>
 	</nav>
-	<form method="post" name="doctorsdetailsform" action="doctorsdetailsinadminhome">
-			<button type="submit" class="btn" id="detailsbtn" name="detailsbtn">Get doctors</button>
-		</form>
+	<form method="post" name="doctorsdetailsform"
+		action="doctorsdetailsinadminhome">
+		<button type="submit" class="btn" id="detailsbtn" name="detailsbtn">Get
+			doctors</button>
+	</form>
 
 	<div class="main-content">
 		<h1>
 			Welcome Admin
-			<%=session.getAttribute("username") %></h1>
+			<%=session.getAttribute("username")%></h1>
 		<p style="font-size: 20px">
 			<b>Want to add a doctor?</b>
 		</p>
@@ -154,7 +156,7 @@ footer {
 	-->
 
 	<footer>
-		<p>&copy; 2024 Hospital Name. All rights reserved.</p>
+		<p>&copy; 2024 Indian Hospital. All rights reserved.</p>
 	</footer>
 
 	<script

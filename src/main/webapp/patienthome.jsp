@@ -4,7 +4,7 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Patient Home Page</title>
+	<title>patient home page</title>
 	<link rel="stylesheet" href="stylesheetHosp.css">
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -102,7 +102,7 @@
 
 <body>
 	<header>
-		<h1>Welcome to Hospital Name</h1>
+		<h1>Welcome to Indian Hospital</h1>
 		<p>Your Health, Our Priority</p>
 	</header>
 
@@ -125,7 +125,7 @@
 		</form>
 	</div>
 	<footer>
-		<p>&copy; 2024 Hospital Name. All rights reserved.</p>
+		<p>&copy; 2024 Indian Hospital. All rights reserved.</p>
 	</footer>
 
 	<script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.slim.min.js"></script>
