@@ -20,6 +20,7 @@ public class RegisterDoctorThroughAdminHomeServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		// Retrieve parameters from the request
+		String id = request.getParameter("id");
 		String firstname = request.getParameter("firstname");
 		String lastname = request.getParameter("lastname");
 		String mobilenumber = request.getParameter("mobilenumber");

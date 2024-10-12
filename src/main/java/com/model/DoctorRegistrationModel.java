@@ -1,12 +1,21 @@
 package com.model;
 
 public class DoctorRegistrationModel {
+	private int id;
 	private String firstname;
 	private String lastname;
 	private String mobilenumber;
 	private String email;
 	private String username;
 	private String password;
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
+	public int getId() {
+		return id;
+	}
 
 	public void setFirstname(String firstname) {
 		this.firstname = firstname;
@@ -60,9 +69,10 @@ public class DoctorRegistrationModel {
 
 	}
 
-	public DoctorRegistrationModel(String firstname, String lastname, String mobilenumber, String email,
+	public DoctorRegistrationModel(int id, String firstname, String lastname, String mobilenumber, String email,
 			String username, String password) {
 		super();
+		this.id = id;
 		this.firstname = firstname;
 		this.lastname = lastname;
 		this.mobilenumber = mobilenumber;
@@ -73,7 +83,7 @@ public class DoctorRegistrationModel {
 
 	@Override
 	public String toString() {
-		return "from RegistrationModel toString() " + firstname + lastname + mobilenumber + email + password + username
-				+ password;
+		return "from RegistrationModel toString() " + id + firstname + lastname + mobilenumber + email + password
+				+ username + password;
 	}
 }

@@ -149,6 +149,13 @@
         <div class="form-container">
             <form name="registrationform" method="post" action="registerdoctor" onsubmit="return disp()">
                 <div class="row">
+                <div class="col-md-12">
+                        <div class="form-group">
+                            <label>Doctor ID</label>
+                            <input type="text" class="form-control" name="id" id="id" placeholder="Enter Doctor ID" onblur="validateField('id', 'mypara1', 'Enter id')">
+                            <p id="mypara1" class="error-message"></p>
+                        </div>
+                    </div>
                     <div class="col-md-6">
                         <div class="form-group">
                             <label>First Name</label>

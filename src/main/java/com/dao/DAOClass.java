@@ -153,8 +153,9 @@ public class DAOClass implements DAOInterface {
 		String status = null;
 
 		// Logging the data received from the model using getter methods
-		System.out.println("DAOClass: Received Patient data:");
+		System.out.println("DAOClass: Received Doctor data:");
 
+		int id = dr.getId();
 		String firstname = dr.getFirstname();
 		String lastname = dr.getLastname();
 		String mobilenumber = dr.getMobilenumber();
@@ -170,13 +171,14 @@ public class DAOClass implements DAOInterface {
 			Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/webprojectone", "root", "root");
 
 			// Preparing SQL statement
-			PreparedStatement ps = con.prepareStatement("insert into doctors values(?,?,?,?,?,?)");
-			ps.setString(1, firstname);
-			ps.setString(2, lastname);
-			ps.setString(3, mobilenumber);
-			ps.setString(4, email);
-			ps.setString(5, username);
-			ps.setString(6, password);
+			PreparedStatement ps = con.prepareStatement("insert into doctors values(?,?,?,?,?,?,?)");
+			ps.setInt(1, id);
+			ps.setString(2, firstname);
+			ps.setString(3, lastname);
+			ps.setString(4, mobilenumber);
+			ps.setString(5, email);
+			ps.setString(6, username);
+			ps.setString(7, password);
 
 			// Executing the statement
 			int n = ps.executeUpdate();

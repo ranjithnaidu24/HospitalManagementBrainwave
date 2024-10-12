@@ -19,7 +19,7 @@
         GetDetailsOfDoctorsModel doctor = null;
         LinkedList<GetDetailsOfDoctorsModel> list = (LinkedList<GetDetailsOfDoctorsModel>) session.getAttribute("getDetailsofDoctors");
         for (GetDetailsOfDoctorsModel get : list) {
-            if (get.getDoctorId().equals(doctorId)) {
+            if (get.getEmail().equals("email")) {
                 doctor = get;
                 break;
             }
