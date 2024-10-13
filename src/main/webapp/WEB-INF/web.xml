@@ -114,4 +114,24 @@
     <servlet-name>DoctorsInAdminHomeServlet</servlet-name>
     <url-pattern>/DoctorsInAdminHomeServlet</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>BookAppointmentServlet</display-name>
+    <servlet-name>BookAppointmentServlet</servlet-name>
+    <servlet-class>com.controller.BookAppointmentServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>BookAppointmentServlet</servlet-name>
+    <url-pattern>/BookAppointmentServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>BookAppointment</display-name>
+    <servlet-name>BookAppointment</servlet-name>
+    <servlet-class>com.controller.BookAppointment</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>BookAppointment</servlet-name>
+    <url-pattern>/BookAppointment</url-pattern>
+  </servlet-mapping>
 </web-app>
